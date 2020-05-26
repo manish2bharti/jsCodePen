@@ -2,16 +2,43 @@
   <head>
     <title>Code Editor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.js"></script>
     <link rel="stylesheet" type='text/css' href='css/styles.css' />
   </head>
 
   <body>
-    <textarea id="html" placeholder="HTML"></textarea>
-    <textarea id="css" placeholder="CSS"></textarea>
-    <textarea id="js" placeholder="JavaScript"></textarea>
-    <iframe id="code"></iframe>
+    <div class="mainWrapper">
+      <div class="header">
+        <input type="button" value="Run" class="btn" onclick="runCode()"/>
+      </div>
+      <div class="mainContainers">
+        <textarea id="html" placeholder="HTML"></textarea>
+        <textarea id="css" placeholder="CSS"></textarea>
+        <textarea id="js" placeholder="JavaScript"></textarea>
+        <iframe id="code"></iframe>
+      </div>
+    </div>
+    
 
+    <!-- <script>
+      var htmlEditor = CodeMirror.fromTextArea(document.getElementById("html"), {
+        lineNumbers: true,
+        mode: "htmlmixed"
+      });
+
+      var cssEditor = CodeMirror.fromTextArea(document.getElementById("css"), {
+        lineNumbers: true,
+        mode: "htmlmixed"
+      });
+
+      var jsEditor = CodeMirror.fromTextArea(document.getElementById("js"), {
+        lineNumbers: true,
+        mode: "htmlmixed"
+      });
+    </script> -->
     <script type="text/javascript" src="js/scripts.js"></script>
   </body>
 </html>
