@@ -3,9 +3,6 @@
     <title>Code Editor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.js"></script> -->
     <link rel="stylesheet" type='text/css' href='css/styles.css' />
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
@@ -64,10 +61,30 @@
           
           <div id="cssSettings" class="tabcontent">
             <h3>CSS</h3>
+            <div class="width100 displayBlock floatLeft">
+              <p>Add external Style Resource e.g Bootstrap, CommonCss...</p>
+              <div id="cssResources">
+                Resource 1:
+                <input type="text" name="cssresource_1">
+                <input type="button" id="add_cssresource()_1" onclick="addResource('cssResources', 'cssresource')" value="+" />
+              </div>
+              <br/>
+              <input type="button" name="Save" value="Save" class="pull-right" onclick="captureResponse('cssResources')" />
+            </div>
           </div>
           
           <div id="jsSettings" class="tabcontent">
             <h3>JS</h3>
+            <div class="width100 displayBlock floatLeft">
+              <p>Add external Resource e.g jQuery AngularJs, Lodash...</p>
+              <div id="jsResources">
+                Resource 1:
+                <input type="text" name="jsresource_1">
+                <input type="button" id="add_jsresource()_1" onclick="addResource('jsResources', 'jsresource')" value="+" />
+              </div>
+              <br/>
+              <input type="button" name="Save" value="Save" class="pull-right" onclick="captureResponse('jsResources')" />
+            </div>
           </div>
         </div>
         <div class="modal-footer">
