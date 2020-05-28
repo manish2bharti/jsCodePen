@@ -4,9 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.js"></script> -->
     <link rel="stylesheet" type='text/css' href='css/styles.css' />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
 
   <body>
@@ -15,30 +16,66 @@
         <input type="button" value="Run" class="btn" onclick="compile()"/>
       </div>
       <div class="mainContainers">
-        <textarea id="html" placeholder="HTML"></textarea>
-        <textarea id="css" placeholder="CSS"></textarea>
-        <textarea id="js" placeholder="JavaScript"></textarea>
-        <iframe id="code"></iframe>
+        <div class="htmlContainer">
+          <div class="displayBlock width100">
+            <span class="floatLeft panelHeading padding10">HTML</span>
+            <a class="floatRight panelSettings padding10" onclick="openSettings(event, 'html')"><i class="fa fa-cog floatRight"></i></a>
+          </div>
+          <textarea id="html"></textarea>
+        </div>
+        <div class="cssContainer">
+          <div class="displayBlock width100">
+            <span class="floatLeft panelHeading padding10">CSS</span>
+            <a class="floatRight padding10" onclick="openSettings(event, 'css')"><i class="fa fa-cog floatRight"></i></a>
+          </div>
+          <textarea id="css"></textarea>
+        </div>
+        <div class="jsContainer">
+          <div class="width100 displayBlock">
+            <span class="floatLeft panelHeading padding10">JS</span>
+            <a class="floatRight padding10" onclick="openSettings(event, 'js')"><i class="fa fa-cog floatRight"></i></a>
+          </div>
+          <textarea id="js"></textarea>
+        </div>
+        <div class="outputContainer">
+          <div class="width100 displayBlock">
+            <span class="floatLeft panelHeading padding10">Output</span>
+          </div>
+          <iframe id="code"></iframe>
+        </div>
       </div>
     </div>
-    
 
-    <!-- <script>
-      var htmlEditor = CodeMirror.fromTextArea(document.getElementById("html"), {
-        lineNumbers: true,
-        mode: "htmlmixed"
-      });
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close" onclick="closeSettings()">&times;</span>
+          <h3>Settings</h3>
+        </div>
+        <div class="modal-body">
+          <div class="tab">
+            <button class="tablinks htmlSettings" onclick="openViewSettings(event, 'htmlSettings')">HTML</button>
+            <button class="tablinks cssSettings" onclick="openViewSettings(event, 'cssSettings')">CSS</button>
+            <button class="tablinks jsSettings" onclick="openViewSettings(event, 'jsSettings')">JS</button>
+          </div>
+          <div id="htmlSettings" class="tabcontent">
+            <h3>HTML</h3>
+          </div>
+          
+          <div id="cssSettings" class="tabcontent">
+            <h3>CSS</h3>
+          </div>
+          
+          <div id="jsSettings" class="tabcontent">
+            <h3>JS</h3>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <!-- <h3>Modal Footer</h3> -->
+        </div>
+      </div>
+    </div>
 
-      var cssEditor = CodeMirror.fromTextArea(document.getElementById("css"), {
-        lineNumbers: true,
-        mode: "htmlmixed"
-      });
-
-      var jsEditor = CodeMirror.fromTextArea(document.getElementById("js"), {
-        lineNumbers: true,
-        mode: "htmlmixed"
-      });
-    </script> -->
     <script type="text/javascript" src="js/scripts.js"></script>
   </body>
 </html>
