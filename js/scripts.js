@@ -1,8 +1,12 @@
 
+parent.document.getElementById('debugDiv').style.display = "none";
+
 var compile = () => {
   var html = document.getElementById("html");
   var css = document.getElementById("css");
   var js = document.getElementById("js");
+  parent.document.getElementById('debugDiv').innerHTML = "";
+  parent.document.getElementById('debugDiv').style.display = "none";
   var code = document.getElementById("code").contentWindow.document;
   code.open();
   code.writeln(
@@ -10,10 +14,12 @@ var compile = () => {
       "<style>" +
       css.value +
       "</style>" +
+      "<script> window.onerror = function(message, url, line, col, errorObj) { parent.document.getElementById('debugDiv').innerHTML += `${message}\n${url}, ${line}:${col} '<br />`; parent.document.getElementById('debugDiv').style.display = 'block';}; </script>"+
       "<script>" +
       js.value +
       "</script>"
   );
+
   var head = code.getElementsByTagName('head')[0];
   // Inject external CSS files in iframe
   if(addedExternalResources.cssResources.length){
@@ -23,6 +29,11 @@ var compile = () => {
       link.href = item; //https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
       link.type = 'text/css';
       link.rel = "stylesheet";
+      link.onerror = (error) => {
+        var error = `Invalid External Stylesheet Url: ${error.currentTarget.src}`;
+        document.getElementById('debugDiv').innerHTML += error + '<br />';
+        document.getElementById('debugDiv').style.display = 'block';
+      }
       head.appendChild(link); 
     })
   }
@@ -34,10 +45,15 @@ var compile = () => {
       var script = code.createElement('script');
       script.src = item; //https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
       script.type = 'text/javascript';
+      script.onerror = (error) => {
+        var error = `Invalid External JS Url: ${error.currentTarget.src}`;
+        document.getElementById('debugDiv').innerHTML += error + '<br />';
+        document.getElementById('debugDiv').style.display = 'block';
+      }
       head.appendChild(script); 
     })
   }
- 
+
   code.close();
   [].forEach.call(code.querySelectorAll("script"), function (el, idx) {
     document.getElementById("code").contentWindow.eval(el);
@@ -45,7 +61,8 @@ var compile = () => {
   [].forEach.call(code.querySelectorAll("link"), function (el, idx) {
     document.getElementById("code").contentWindow.eval(el);
   });
-}
+
+ }
 
 // --------------- Modal Functionality Start ---------------------
 var modal = document.getElementById("myModal");

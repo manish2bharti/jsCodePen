@@ -39,6 +39,7 @@ a{
   font-size: 14px;
   border: 1px solid #000;
   border-top: 0;
+  position: relative;
 }
 
 .outputContainer{
@@ -55,6 +56,15 @@ a{
   border: 0;
   padding: 10px 15px;
   cursor: pointer;
+}
+
+#debugDiv{
+  font-size: 12px;
+  background: rgb(167, 16, 16);
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
 }
 
 .width100{
