@@ -16,10 +16,13 @@ var compile = () => {
   );
   var head = code.getElementsByTagName('head')[0];
   var script = code.createElement('script');
-  script.src = "https://code.jquery.com/jquery-1.12.4.min.js"
+  script.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
   script.type = 'text/javascript';
   head.appendChild(script);
   code.close();
+  [].forEach.call(code.querySelectorAll("script"), function (el, idx) {
+    document.getElementById("code").contentWindow.eval(el);
+  });
 }
 
 // --------------- Modal Functionality Start ---------------------
