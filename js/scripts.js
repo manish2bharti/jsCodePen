@@ -5,8 +5,9 @@ var htmlEditor = CodeMirror.fromTextArea(document.getElementById("htmlEditor"), 
   lineNumbers : true,
   matchBrackets : true,
   tabMode: "indent",
-  mode:  "htmlmixed",
+  mode: 'text/html',
   htmlMode: true,
+  autoCloseTags: true,
   theme: 'monokai'
 });
 
@@ -15,7 +16,7 @@ var cssEditor = CodeMirror.fromTextArea(document.getElementById("cssEditor"), {
   matchBrackets : true,
   tabMode: "indent",
   mode:  "css",
-  htmlMode: true,
+  autoCloseTags: true,
   theme: 'monokai'
 });
 
@@ -24,7 +25,7 @@ var jsEditor = CodeMirror.fromTextArea(document.getElementById("jsEditor"), {
   matchBrackets : true,
   tabMode: "indent",
   mode:  "javascript",
-  htmlMode: true,
+  autoCloseTags: true,
   theme: 'monokai'
 });
 
