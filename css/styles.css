@@ -128,20 +128,7 @@ iframe{
   border-bottom: 1px solid #000;
   background: #3d424a;
   color:#fff;
-}
-
-.CodeMirror{
-  width: 50%;
-  float: left;
-  min-height: 250px;
-  overflow: auto;
-  margin: auto;
-  display: inline-block;
-  background: #1f2227;
-  outline: none;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  color: #fff;
+  /* height: 299px; */
 }
 
 
@@ -264,3 +251,32 @@ iframe{
   margin: 5px 0;
 }
 /* ------------------ Tabs Stying End---------------- */
+
+/* ------------------ Code Mirror Stying End---------------- */
+.CodeMirror{
+  width: 100%;
+  height: 250px !important;
+  background: #1f2227 !important;
+  color: #fff !important;
+}
+
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  z-index: 4;
+  background: none!important;
+  border: none!important;
+}
+.CodeMirror-linenumber {
+  padding: 1px 8px 0 5px;
+  color: #4b4d51;
+  font-size: 11px;
+}
+.CodeMirror-gutters{
+  background: #1f2227 !important;
+  color: #4b4d51 !important;
+  border-right: none !important;
+}
+.CodeMirror pre.CodeMirror-line, .CodeMirror pre.CodeMirror-line-like{
+  font-size: 12px !important;
+}
+/* ------------------ Code Mirror Stying End---------------- */

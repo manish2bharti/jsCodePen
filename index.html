@@ -3,8 +3,16 @@
     <title>Code Editor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type='text/css' href='css/styles.css' />
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type='text/css' href='https://codemirror.net/lib/codemirror.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/codemirror.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/mode/xml/xml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/mode/javascript/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/mode/css/css.js"></script>
+    <link rel="stylesheet" type='text/css' href='css/styles.css' />
+    <link rel="stylesheet" type='text/css' href='https://codemirror.net/theme/monokai.css' />
   </head>
 
   <body>
@@ -18,21 +26,21 @@
             <span class="floatLeft panelHeading padding10">HTML</span>
             <a class="floatRight panelSettings padding10" onclick="openSettings(event, 'html')"><i class="fa fa-cog floatRight"></i></a>
           </div>
-          <textarea id="html"></textarea>
+          <textarea id="htmlEditor"></textarea>
         </div>
         <div class="cssContainer">
           <div class="displayBlock width100">
             <span class="floatLeft panelHeading padding10">CSS</span>
             <a class="floatRight padding10" onclick="openSettings(event, 'css')"><i class="fa fa-cog floatRight"></i></a>
           </div>
-          <textarea id="css"></textarea>
+          <textarea id="cssEditor"></textarea>
         </div>
         <div class="jsContainer">
           <div class="width100 displayBlock">
             <span class="floatLeft panelHeading padding10">JS</span>
             <a class="floatRight padding10" onclick="openSettings(event, 'js')"><i class="fa fa-cog floatRight"></i></a>
           </div>
-          <textarea id="js"></textarea>
+          <textarea id="jsEditor"></textarea>
           <div id="debugDiv"></div>
         </div>
         <div class="outputContainer">

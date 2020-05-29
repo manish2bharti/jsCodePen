@@ -1,6 +1,33 @@
 
 parent.document.getElementById('debugDiv').style.display = "none";
 
+var htmlEditor = CodeMirror.fromTextArea(document.getElementById("htmlEditor"), {
+  lineNumbers : true,
+  matchBrackets : true,
+  tabMode: "indent",
+  mode:  "htmlmixed",
+  htmlMode: true,
+  theme: 'monokai'
+});
+
+var cssEditor = CodeMirror.fromTextArea(document.getElementById("cssEditor"), {
+  lineNumbers : true,
+  matchBrackets : true,
+  tabMode: "indent",
+  mode:  "css",
+  htmlMode: true,
+  theme: 'monokai'
+});
+
+var jsEditor = CodeMirror.fromTextArea(document.getElementById("jsEditor"), {
+  lineNumbers : true,
+  matchBrackets : true,
+  tabMode: "indent",
+  mode:  "javascript",
+  htmlMode: true,
+  theme: 'monokai'
+});
+
 var compile = () => {
   var html = document.getElementById("html");
   var css = document.getElementById("css");
@@ -10,13 +37,13 @@ var compile = () => {
   var code = document.getElementById("code").contentWindow.document;
   code.open();
   code.writeln(
-    html.value +
+    htmlEditor.getValue() +
       "<style>" +
-      css.value +
+      cssEditor.getValue() +
       "</style>" +
       "<script> window.onerror = function(message, url, line, col, errorObj) { parent.document.getElementById('debugDiv').innerHTML += `${message}\n${url}, ${line}:${col} '<br />`; parent.document.getElementById('debugDiv').style.display = 'block';}; </script>"+
       "<script>" +
-      js.value +
+      jsEditor.getValue() +
       "</script>"
   );
 
