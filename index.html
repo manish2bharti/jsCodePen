@@ -19,7 +19,14 @@
   <body>
     <div class="mainWrapper">
       <div class="header">
-        <input type="button" value="Run" class="btn" onclick="compile()"/>
+        <div class="companyLogo">
+          <img src="images/jsCodePenLogo.png" alt="JS CodePen" title="JS CodePen"/>
+          <span>JS CodePen</span>
+        </div>
+        <div class="runButton" alt="Run(Ctrl + Enter)"  title="Run(Ctrl + Enter)">
+          <i class="fa fa-play" aria-hidden="true"></i>
+          <input type="button" value="Run" class="btn" onclick="compile()"/>
+        </div>
       </div>
       <div class="mainContainers">
         <div class="htmlContainer">
@@ -103,6 +110,6 @@
       </div>
     </div>
 
-    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/scripts_o.js"></script>
   </body>
 </html>

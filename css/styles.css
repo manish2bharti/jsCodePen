@@ -18,10 +18,48 @@ a{
   width: 100%;
   float: left;
   display: block;
-  height: 35px;
+  height: 60px;
   background: #000;
 }
 
+.companyLogo{
+  float: left;
+  display: block;
+  padding: 5px 10px;
+}
+.companyLogo img{
+  height: 50px;
+  float: left;
+  display: block;
+}
+.companyLogo span{
+  font-size: 18px;
+  float: left;
+  display: block;
+  color: #5371ff;
+  margin: 20px 8px 0;
+}
+
+.runButton{
+  display: block;
+  margin: 11px auto 9px;
+  width: 52px;
+  padding: 0 5px 0 10px;
+  border: 1px solid #5371ff;
+  border-radius: 5px;
+}
+.runButton i.fa{
+  color: #5371ff;
+}
+
+.runButton:hover{
+  border: 1px solid #fff;
+  background: #fff;
+}
+
+.runButton:hover .btn{
+  color: #5371ff
+}
 
 .mainContainers{
   width: 100%;
@@ -54,8 +92,9 @@ a{
   background: none;
   color: #fff;
   border: 0;
-  padding: 10px 15px;
+  padding: 8px 5px;
   cursor: pointer;
+  font-weight: 600;
 }
 
 #debugDiv{
@@ -127,8 +166,8 @@ textarea, iframe {
 iframe{
   border-width: 0px;
   border-bottom: 1px solid #000;
-  background: #3d424a;
-  color:#fff;
+  background: #fff;
+  color:#000;
   /* height: 299px; */
 }
 

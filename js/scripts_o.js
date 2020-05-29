@@ -29,6 +29,10 @@ var jsEditor = CodeMirror.fromTextArea(document.getElementById("jsEditor"), {
   theme: 'monokai'
 });
 
+document.body.addEventListener('keydown', function(e) {
+	if(e.ctrlKey && e.keyCode == 13) compile();
+});
+
 var compile = () => {
   var html = document.getElementById("html");
   var css = document.getElementById("css");
