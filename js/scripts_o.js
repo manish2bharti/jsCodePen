@@ -8,7 +8,8 @@ var htmlEditor = CodeMirror.fromTextArea(document.getElementById("htmlEditor"), 
   mode: 'text/html',
   htmlMode: true,
   autoCloseTags: true,
-  theme: 'monokai'
+  theme: 'monokai',
+  extraKeys: {"Ctrl-Space": "autocomplete"}
 });
 
 var cssEditor = CodeMirror.fromTextArea(document.getElementById("cssEditor"), {
@@ -17,7 +18,8 @@ var cssEditor = CodeMirror.fromTextArea(document.getElementById("cssEditor"), {
   tabMode: "indent",
   mode:  "css",
   autoCloseTags: true,
-  theme: 'monokai'
+  theme: 'monokai',
+  extraKeys: {"Ctrl-Space": "autocomplete"}
 });
 
 var jsEditor = CodeMirror.fromTextArea(document.getElementById("jsEditor"), {
@@ -26,7 +28,8 @@ var jsEditor = CodeMirror.fromTextArea(document.getElementById("jsEditor"), {
   tabMode: "indent",
   mode:  "javascript",
   autoCloseTags: true,
-  theme: 'monokai'
+  theme: 'monokai',
+  extraKeys: {"Ctrl-Space": "autocomplete"}
 });
 
 document.body.addEventListener('keydown', function(e) {
